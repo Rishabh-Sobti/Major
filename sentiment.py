@@ -387,8 +387,10 @@ def trainAndClassify( tweets, test_tweets, classifier, method, feature_set, file
             ans  = [classifier_tot.classify(t) for (t,s) in final_test]
             break
         elif ('MaxentClassifier' == classifier and os.path.isfile('models/MEC.pickle')):
+            print "starrt"
             classifier_tot = pickle.load(open('models/MEC.pickle', 'rb'))
             ans  = [classifier_tot.classify(t) for (t,s) in final_test]
+            print "endd"
             break
         else:
             (v_train, v_test) = getTrainingAndTestData(tweets, FOLDS, k, method, feature_set)
@@ -505,10 +507,6 @@ def trainAndClassify( tweets, test_tweets, classifier, method, feature_set, file
      print "Accuracies:", accuracies
      print "Average Accuracy:", sum(accuracies)/FOLDS
 
-    sys.stderr.write('\nAccuracies :')    
-    for k in range(FOLDS):
-        sys.stderr.write(' %0.5f'%accuracies[k])
-    sys.stderr.write('\nAverage Accuracy: %0.5f\n'% (sum(accuracies)/FOLDS))
     sys.stderr.flush()
     
     sys.stdout.flush()
