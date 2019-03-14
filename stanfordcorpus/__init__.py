@@ -74,9 +74,9 @@ def sampleCSV( in_file, out_file, K=5000 ):
     return 0
 
 def randomSampleCSV( in_file, out_file, K=5000 ):
-
-    fp = open(in_file , 'r')
-    fq = open(out_file, 'w')
+    import io
+    fp = io.open(in_file , 'r', encoding='latin-1')
+    fq = io.open(out_file, 'w')
 
     rows = [None] * K
 
@@ -90,7 +90,7 @@ def randomSampleCSV( in_file, out_file, K=5000 ):
             rows[j-1] = row
 
     for row in rows:
-        fq.write(str(row))
+        fq.write(row)
 
     min(1, K/i)
 
