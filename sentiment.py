@@ -394,7 +394,6 @@ def trainAndClassify( tweets, test_tweets, classifier, method, feature_set, file
             break
         else:
             (v_train, v_test) = getTrainingAndTestData(tweets, FOLDS, k, method, feature_set)
-
             sys.stderr.write( '\n[training start]' )
             classifier_tot = train_function(v_train)
             sys.stderr.write( ' [training complete]' )

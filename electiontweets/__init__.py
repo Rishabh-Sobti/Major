@@ -9,6 +9,9 @@ def getTweetsRawData( fileName ):
         if (first==0):
             first=1
             continue
-        tweets.append( [row[4], '', row[10], row[10] ] )
+        try:
+            tweets.append( [row[4], '', row[10], row[10] ] )
+        except:
+            continue
 
     return tweets # 0: Text # 1: class # 2: subject # 3: query
