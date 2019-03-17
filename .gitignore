@@ -1,6 +1,6 @@
 *.csv
-logs/
-models/
+logs/*.txt
+*.pickle
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
