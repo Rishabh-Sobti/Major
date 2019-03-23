@@ -1,6 +1,7 @@
 *.csv
 logs/*.txt
 *.pickle
+analysis/*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
