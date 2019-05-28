@@ -2,6 +2,7 @@
 logs/*.txt
 *.pickle
 analysis/*.png
+analysis/datab/*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
